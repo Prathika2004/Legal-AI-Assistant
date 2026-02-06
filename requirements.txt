@@ -1,9 +1,7 @@
-streamlit 
-spacy 
-openai 
-anthropic 
-python-docx 
-pymupdf 
+streamlit
+spacy
+python-docx
+pymupdf
 fpdf2
 huggingface_hub
 python-dotenv

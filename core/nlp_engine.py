@@ -1,11 +1,20 @@
 import spacy
+import os
 
 class NLPEngine:
     def __init__(self):
-        self.nlp = spacy.load("en_core_web_sm")
+        model_name = "en_core_web_sm"
+        try:
+            # Try to load the model
+            self.nlp = spacy.load(model_name)
+        except OSError:
+            # If model not found, download it automatically (Fix for Streamlit Cloud)
+            import spacy.cli
+            spacy.cli.download(model_name)
+            self.nlp = spacy.load(model_name)
 
     def get_basic_entities(self, text):
-        doc = self.nlp(text[:100000]) # Limit length for performance
+        doc = self.nlp(text[:100000])
         entities = {
             "dates": [ent.text for ent in doc.ents if ent.label_ == "DATE"],
             "organizations": [ent.text for ent in doc.ents if ent.label_ == "ORG"],
