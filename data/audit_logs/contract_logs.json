@@ -1,0 +1,101 @@
+[
+    {
+        "timestamp": "2026-02-04 20:56:57",
+        "file_name": "legaldoc.pdf",
+        "contract_type": "Lease Deed (Term of Years) \u2013 Residential/Commercial Lease Agreement",
+        "risk_score": 68,
+        "top_issues": [
+            "Security Deposit / Security Amount",
+            "Re\u2011entry / Forfeiture Clause",
+            "Vesting of Improvements"
+        ]
+    },
+    {
+        "timestamp": "2026-02-04 21:44:12",
+        "file_name": "docum.pdf",
+        "contract_type": "Lease Deed (Term of Years) \u2013 Residential/Commercial Lease Agreement",
+        "risk_score": 72,
+        "top_issues": [
+            "Maintenance & Repairs",
+            "Re\u2011Entry & Termination on Default",
+            "Automatic Vesting of Improvements"
+        ]
+    },
+    {
+        "timestamp": "2026-02-06 20:04:40",
+        "file_name": "legaldoc.pdf",
+        "contract_type": "Lease Deed (Term of Years) \u2013 Residential/Commercial Lease",
+        "risk_score": 58,
+        "top_issues": [
+            "Indemnity for Taxes, Rates & Duties",
+            "Power to Demolish Existing Structures",
+            "Re\u2011entry / Unilateral Termination Clause (Clause 4)"
+        ]
+    },
+    {
+        "timestamp": "2026-02-06 20:07:47",
+        "file_name": "legaldoc.pdf",
+        "contract_type": "Lease Deed (Term\u2011years) \u2013 Residential/Commercial Lease Agreement",
+        "risk_score": 71,
+        "top_issues": [
+            "Indemnity for Taxes, Rates & Duties",
+            "Re\u2011entry / Unilateral Termination for Arrears",
+            "Automatic Vesting of Improvements"
+        ]
+    },
+    {
+        "timestamp": "2026-02-06 20:15:17",
+        "file_name": "legaldoc.pdf",
+        "contract_type": "\u0932\u0940\u091c \u0921\u0940\u0921 (\u0935\u0930\u094d\u0937\u094b\u0902 \u0915\u0940 \u0905\u0935\u0927\u093f \u0915\u0947 \u0932\u093f\u090f) \u0915\u093f\u0930\u093e\u092f\u093e \u0938\u092e\u091d\u094c\u0924\u093e",
+        "risk_score": 65,
+        "top_issues": [
+            "\u0915\u0930 \u0914\u0930 \u0909\u092a\u0915\u0930 \u092d\u0941\u0917\u0924\u093e\u0928",
+            "\u092a\u091f\u094d\u091f\u093e \u0938\u092e\u093e\u092a\u094d\u0924\u093f \u092a\u0930 \u0938\u0902\u092a\u0924\u094d\u0924\u093f \u0938\u094d\u0935\u093e\u092e\u093f\u0924\u094d\u0935"
+        ]
+    },
+    {
+        "timestamp": "2026-02-06 20:17:04",
+        "file_name": "legaldoc.pdf",
+        "contract_type": "Long-Term Lease Deed (Term of Years)",
+        "risk_score": 65,
+        "top_issues": [
+            "Tax and Municipal Charges",
+            "Maintenance and Repairs",
+            "Property Vesting Clause"
+        ]
+    },
+    {
+        "timestamp": "2026-02-06 20:30:45",
+        "file_name": "legaldoc.pdf",
+        "contract_type": "Error",
+        "risk_score": 0,
+        "top_issues": []
+    },
+    {
+        "timestamp": "2026-02-06 20:34:20",
+        "file_name": "legaldoc.pdf",
+        "contract_type": "Lease Deed (Term of Years)",
+        "risk_score": 68,
+        "top_issues": [
+            "\u092a\u0941\u0928\u0903 \u092a\u094d\u0930\u0935\u0947\u0936 (\u0930\u0940-\u090f\u0902\u091f\u094d\u0930\u0940) \u090f\u0935\u0902 \u0938\u092e\u093e\u092a\u094d\u0924\u093f",
+            "\u0938\u094d\u0935\u093e\u092e\u093f\u0924\u094d\u0935 \u0915\u093e \u0938\u094d\u0935\u091a\u093e\u0932\u093f\u0924 \u0939\u0938\u094d\u0924\u093e\u0902\u0924\u0930\u0923"
+        ]
+    },
+    {
+        "timestamp": "2026-02-06 20:38:56",
+        "file_name": "legaldoc.pdf",
+        "contract_type": "Error",
+        "risk_score": 0,
+        "top_issues": []
+    },
+    {
+        "timestamp": "2026-02-06 20:42:38",
+        "file_name": "legaldoc.pdf",
+        "contract_type": "\u0932\u0940\u091c\u093c \u0921\u0940\u0921 (\u0935\u0930\u094d\u0937\u094b\u0902 \u0915\u0940 \u0905\u0935\u0927\u093f) \u0915\u093f\u0930\u093e\u092f\u0947\u0926\u093e\u0930\u0940 \u0938\u092e\u091d\u094c\u0924\u093e",
+        "risk_score": 68,
+        "top_issues": [
+            "\u092a\u0941\u0928\u0903 \u092a\u094d\u0930\u0935\u0947\u0936 \u090f\u0935\u0902 \u0938\u092e\u093e\u092a\u094d\u0924\u093f",
+            "\u0938\u0941\u0927\u093e\u0930\u094b\u0902 \u0915\u093e \u0938\u094d\u0935\u093e\u092e\u093f\u0924\u094d\u0935"
+        ]
+    }
+]
