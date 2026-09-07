@@ -12,7 +12,6 @@ from dotenv import load_dotenv
 load_dotenv()
 api_key = os.getenv("HF_TOKEN")
 
-from dotenv import load_dotenv
 # --- HELPER FUNCTION: PDF REPORT GENERATION (FIXED FOR HINDI & BYTEARRAY) ---
 def generate_pdf_report(analysis, entities):
     pdf = FPDF()
