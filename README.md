@@ -1,104 +1,45 @@
-AI Legal Assitant is a sophisticated, AI-powered legal tool designed to empower Indian Small and Medium Enterprises (SMEs). It simplifies complex legal contracts, identifies hidden risks, and provides actionable advice in plain business language, supporting both English and Hindi.
+# NyayaSathi — AI Legal Assistant for Indian SMEs
 
-🚀 The Problem
+## Problem Statement
+Small business owners in India routinely sign vendor, employment, and lease agreements without full legal review, because professional consultation is expensive. This leads to:
+- **Hidden risks** — unfair indemnity clauses, unilateral termination rights, one-sided liability terms.
+- **Compliance gaps** — silent violations of the MSME Development Act (e.g. the 45-day payment rule) or the Indian Contract Act 1872.
+- **Language barriers** — contracts are drafted in dense legal English, with no accessible explanation in Hindi.
 
-Small business owners in India often sign complex vendor, employment, or lease agreements without full legal review due to high consultation costs. This leads to:
+## What This Project Solves
+NyayaSathi is a Streamlit app that lets an SME owner upload a contract (PDF/DOCX/TXT) and get back, in plain business language:
+- A composite **risk score (0-100)** and clause-by-clause risk rating (Low/Medium/High).
+- Plain-English (or Hindi) explanations of each risky clause plus a concrete mitigation suggestion.
+- Automatic checks against specific Indian statutes — e.g. Section 27 non-compete validity under the Contract Act, the MSME 45-day payment rule, and the Arbitration & Conciliation Act 1996.
+- A downloadable PDF report (with full Hindi/Devanagari font support).
+- A local audit trail of every contract analyzed, to spot recurring issues over time.
+- A template generator for balanced NDA / vendor / employment agreements SMEs can use as counter-offers.
 
-Hidden Risks: Unfair indemnity or unilateral termination clauses.
+## Approach
+- **Local NLP first:** spaCy (`en_core_web_sm`) extracts dates, organizations, and monetary entities on-device before anything is sent externally.
+- **LLM reasoning:** The extracted contract text is sent to a Hugging Face-hosted LLM (`openai/gpt-oss-120b` by default) with a structured prompt that forces a strict JSON response — contract type, risk score, per-clause analysis, and compliance alerts.
+- **Bilingual output:** The same prompt pipeline supports English or Hindi output end-to-end, including PDF export via a bundled Noto Sans Devanagari font.
+- **Audit trail:** Every analysis is appended to a local JSON log (`data/audit_logs/`) that powers the in-app history tab.
 
-Compliance Gaps: Violations of the MSME Development Act or Indian Contract Act.
+## Tech Stack
+Streamlit (UI), Hugging Face Inference API (LLM), spaCy (local NER), PyMuPDF + python-docx (document parsing), fpdf2 (PDF report generation), python-dotenv.
 
-Language Barriers: Difficulty understanding "Legalese" in English or Hindi.
-
-✨ Key Features
-
-Multi-Format Parsing: Support for PDF, DOCX, and Text files using PyMuPDF and python-docx.
-
-Intelligent Risk Scoring: Provides a composite risk score (0-100) and clause-level analysis (Low/Medium/High).
-
-Indian Law Compliance: Specifically checks contracts against:
-
-Indian Contract Act 1872 (e.g., Section 27 Non-compete validity).
-
-MSME Development Act 2006 (e.g., 45-day payment rule).
-
-Arbitration & Conciliation Act 1996.
-
-Multilingual Support: Full analysis and PDF report generation in English and Hindi.
-
-Audit Trail: Automatically builds a local knowledge base of analyzed contracts to identify recurring legal issues.
-
-SME Templates: Generates balanced, "SME-friendly" contract templates for counter-offers.
-
-🛠️ Technical Stack
-
-LLM: DeepSeek-V3 (120B Parameter Model) hosted via Hugging Face Inference.
-
-NLP Preprocessing: spaCy (en_core_web_sm) for local Named Entity Recognition (NER) and segmentation.
-
-Frontend: Streamlit for a professional, responsive dashboard.
-
-Document Handling: PyMuPDF and python-docx.
-
-Export Engine: fpdf2 with Unicode support for Hindi PDF generation.
-
-📂 Project Structure
-code
-Text
-download
-content_copy
-expand_less
-nyayasathi/
-├── app.py                # Streamlit UI & Orchestration
-├── .env                  # Environment Variables (HF_TOKEN)
-├── NotoSans-Regular.ttf  # Unicode font for Hindi support
-├── core/
-│   ├── parser.py         # Document text extraction
-│   ├── nlp_engine.py     # Local NER & NLP processing
-│   └── legal_brain.py    # GenAI reasoning & prompt engineering
-├── utils/
-│   └── logger.py         # Audit logging & Knowledge base logic
-└── data/
-    └── audit_logs/       # Local JSON history of analyses
-⚙️ Installation & Usage
-
-
-
-Install Dependencies:
-
-code
-Bash
-download
-content_copy
-expand_less
+## How to Run
+```bash
 pip install -r requirements.txt
 python -m spacy download en_core_web_sm
-
-Setup Environment:
-Create a .env file and add your HF_TOKEN=your_token_here.
-
-Run the App:
-
-code
-Bash
-download
-content_copy
-expand_less
+```
+Create a `.env` file in the project root:
+```
+HF_TOKEN=your_huggingface_token_here
+```
+Then run:
+```bash
 streamlit run app.py
-🛡️ Privacy & Confidentiality
+```
 
-NyayaSathi prioritizes data security. All PII (Personally Identifiable Information) extraction like dates and organizations is handled locally using spaCy. Contract data is transmitted via encrypted API calls to the LLM and is not used for training purposes.
+## Privacy Note
+PII extraction (dates, organizations) runs locally via spaCy. Only the contract text needed for analysis is sent to the LLM API, over an encrypted connection.
 
-⚠️ Disclaimer
-
-This is an AI-powered assistant designed for informational purposes only. It does not constitute legal advice and is not a replacement for a qualified legal professional.
-
-How to use this for your submission:
-
-Copy the text above.
-
-In VS Code, open your README.md file.
-
-Paste the content and update the GitHub Link and User Name placeholders.
-
-Commit and push to your GitHub.
+## Disclaimer
+This is an AI-powered assistant for informational purposes only. It does not constitute legal advice and is not a substitute for a qualified legal professional.
